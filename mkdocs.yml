@@ -17,6 +17,7 @@ nav:
       - Poetry: Python/poetry.md
   - FastAPI:
     - Основные: FastAPI/index.md
+    - Веб-сокеты: FastAPI/WebSockets.md
     - Pydantic: FastAPI/Pydantic.md
     - SQLAlchemy: FastAPI/SQLAlchemy.md
   - Docker: Docker/index.md
@@ -30,22 +31,20 @@ nav:
 theme:
   name: material
   palette:
-    # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: deep purple
       accent: deep purple
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
-    # Dark mode
+        name: Переключить на темную тему
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: deep purple
       accent: amber
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Переключить на светлую тему
   features:
     - navigation.tabs
     - navigation.sections
@@ -61,30 +60,25 @@ plugins:
   - search
   - minify:
       minify_html: true
-  # - git-committers:
-  #     repository: your-username/your-repo
-  #     branch: main
-  # - git-commit:
-  #     enabled: true
-  #     include_committer: true
-  
+
 markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.highlight
   - admonition
-  - toc:
-      permalink: true
   - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.emoji
+  # - pymdownx.emoji:
+      # emoji_index: !!python/name:material.extensions.emoji.twemoji
+      # emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.inlinehilite
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
 
 extra_css:
   - stylesheets/extra.css
