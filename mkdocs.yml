@@ -3,7 +3,7 @@ site_name: Utils Docs
 nav:
   - Главная: index.md
   - Python:
-    - Введение: Python/index.md
+    - Python: Python/index.md
     - Возможности языка:
       - Фишки: Python/Tips.md
       - CLI: Python/CLI.md
@@ -16,17 +16,17 @@ nav:
       - uv: Python/uv.md
       - Poetry: Python/poetry.md
   - FastAPI:
-    - Основные: FastAPI/index.md
+    - FastAPI: FastAPI/index.md
     - Веб-сокеты: FastAPI/WebSockets.md
     - Pydantic: FastAPI/Pydantic.md
     - SQLAlchemy: FastAPI/SQLAlchemy.md
   - Docker: Docker/index.md
   - Vue.js: Vue.js/index.md
   - Bash: 
-    - Основные: Bash/index.md
+    - Bash: Bash/index.md
     - CLI команды: Bash/CLI.md
   - Git:
-    - Основные: Git/index.md
+    - Git: Git/index.md
 
 theme:
   name: material
@@ -55,6 +55,7 @@ theme:
     - search.suggest
     - content.code.copy
     - content.tooltips
+    - navigation.indexes
 
 plugins:
   - search

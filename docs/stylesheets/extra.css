@@ -128,3 +128,17 @@
   line-height: 1.5;
   position: relative;
 }
+.md-nav__item--section + .md-nav__item--section {
+  border-top: 1px solid var(--md-divider) !important;
+  margin-top: 1.2em !important;
+  padding-top: 1.2em !important;
+}
+
+
+li + .md-nav__item--section {
+  border-top: 1px solid var(--md-divider) !important;
+  margin-top: 1.2em !important;
+  padding-top: 1.2em !important;
+}
+
+
