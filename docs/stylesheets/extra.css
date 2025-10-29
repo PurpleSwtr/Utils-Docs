@@ -1,0 +1,130 @@
+:root {
+  --md-primary-fg-color: #7c3aed;
+  --md-accent-fg-color: #a78bfa;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1e1e2e;
+}
+
+.md-typeset a, 
+.md-nav__link, 
+.md-tabs__link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-typeset .admonition {
+  border-radius: 12px;
+  border-left-width: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 1.5em 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-typeset .admonition:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.md-typeset h1 {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color)) 1;
+}
+
+.md-tabs__link {
+  position: relative;
+  overflow: hidden;
+}
+
+.md-tabs__link--active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: var(--md-accent-fg-color);
+  border-radius: 3px 3px 0 0;
+}
+
+.md-typeset ul li, .md-typeset ol li {
+  position: relative;
+  padding-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.md-typeset ul li:hover, .md-typeset ol li:hover {
+  transform: translateX(4px);
+}
+
+.md-typeset ul li::before {
+  content: '▸';
+  position: absolute;
+  left: -0.5rem;
+  color: var(--md-accent-fg-color);
+  font-weight: bold;
+}
+
+.md-typeset .admonition.details,
+.md-typeset details.details {
+    border-color: var(--md-accent-fg-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.md-typeset .admonition.details summary,
+.md-typeset details.details summary {
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.md-typeset .admonition.details summary::before,
+.md-typeset details.details summary::before {
+    background-color: white;
+}
+
+.md-typeset .admonition.details:hover,
+.md-typeset details.details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.highlight .gp, 
+.highlight .go {
+  user-select: none;
+  opacity: 0.8;
+}
+
+.language-bash .gp::before,
+.language-shell .gp::before,
+.language-console .gp::before {
+  content: "$ ";
+  color: var(--md-accent-fg-color, #7c3aed);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.language-python .gp::before {
+  content: ">>> ";
+  color: var(--md-accent-fg-color, #7c3aed);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.md-typeset pre > code {
+  border-radius: 12px;
+  border-left: 6px solid var(--md-accent-fg-color);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  font-size: 0.9em;
+  line-height: 1.5;
+  position: relative;
+}

@@ -1,0 +1,90 @@
+site_name: Utils Docs
+
+nav:
+  - Главная: index.md
+  - Python:
+    - Введение: Python/index.md
+    - Возможности языка:
+      - Фишки: Python/Tips.md
+      - CLI: Python/CLI.md
+      - Декораторы: Python/Decorators.md
+      - Методы классов: Python/Class_methods.md
+      - Regex: Python/Regex.md
+      - Zen of Python: Python/Zen.md
+    - Пакеты:
+      - Создание venv: Python/venv.md
+      - uv: Python/uv.md
+      - Poetry: Python/poetry.md
+  - FastAPI:
+    - Основные: FastAPI/index.md
+    - Pydantic: FastAPI/Pydantic.md
+    - SQLAlchemy: FastAPI/SQLAlchemy.md
+  - Docker: Docker/index.md
+  - Vue.js: Vue.js/index.md
+  - Bash: 
+    - Основные: Bash/index.md
+    - CLI команды: Bash/CLI.md
+  - Git:
+    - Основные: Git/index.md
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tooltips
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  # - git-committers:
+  #     repository: your-username/your-repo
+  #     branch: main
+  # - git-commit:
+  #     enabled: true
+  #     include_committer: true
+  
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+
+extra_css:
+  - stylesheets/extra.css
