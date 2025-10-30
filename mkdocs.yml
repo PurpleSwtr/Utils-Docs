@@ -3,11 +3,12 @@ nav:
   - Python:
     - Python: Python/index.md
     - Возможности языка:
-      - CLI: Python/CLI.md
-      - Файлы: Python/files.md
       - Строки: Python/strings.md
+      - Списки: Python/lists.md
+      - Файлы: Python/files.md
       - Декораторы: Python/Decorators.md
       - Методы классов: Python/Class_methods.md
+      - Дандер методы: Python/Dander.md
       - Regex: Python/Regex.md
     - Пакеты:
       - Создание venv: Python/venv.md
@@ -16,6 +17,7 @@ nav:
       - Black: Python/black.md
       - Ruff: Python/ruff.md
     - Фишки: 
+      - CLI: Python/CLI.md
       - 60th: Python/60th.md
       - Zen of Python: Python/Zen.md
   - FastAPI:

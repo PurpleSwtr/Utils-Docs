@@ -53,22 +53,48 @@
   border-radius: 3px 3px 0 0;
 }
 
-.md-typeset ul li, .md-typeset ol li {
-  position: relative;
-  padding-left: 1rem;
-  transition: transform 0.2s ease;
+.md-typeset ul {
+list-style: none;
+padding-left: 1rem;
 }
 
-.md-typeset ul li:hover, .md-typeset ol li:hover {
-  transform: translateX(4px);
+.md-typeset ul li {
+position: relative;
+padding-left: 1.5rem;
+transition: transform 0.2s ease;
+}
+
+.md-typeset ul li:hover {
+transform: translateX(4px);
+color: var(--md-primary-fg-color);
+
 }
 
 .md-typeset ul li::before {
-  content: '▸';
-  position: absolute;
-  left: -0.5rem;
-  color: var(--md-accent-fg-color);
-  font-weight: bold;
+content: '▸';
+position: absolute;
+left: 0;
+color: var(--md-accent-fg-color);
+font-weight: bold;
+}
+
+.md-typeset ol {
+list-style: decimal;
+padding-left: 1rem;
+}
+
+.md-typeset ol li {
+position: relative;
+padding-left: 0.5rem;
+transition: transform 0.2s ease;
+}
+
+.md-typeset ol li:hover {
+transform: translateX(4px);
+}
+
+.md-typeset ol li::before {
+display: none;
 }
 
 .md-typeset .admonition.details,
