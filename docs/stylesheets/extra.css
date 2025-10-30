@@ -1,6 +1,7 @@
 :root {
   --md-primary-fg-color: #7c3aed;
   --md-accent-fg-color: #a78bfa;
+  --md-text-font: "Montserrat";
 }
 
 [data-md-color-scheme="slate"] {

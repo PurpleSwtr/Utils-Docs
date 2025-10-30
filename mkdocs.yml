@@ -1,20 +1,23 @@
-site_name: Utils Docs
-
 nav:
   - Главная: index.md
   - Python:
     - Python: Python/index.md
     - Возможности языка:
-      - Фишки: Python/Tips.md
       - CLI: Python/CLI.md
+      - Файлы: Python/files.md
+      - Строки: Python/strings.md
       - Декораторы: Python/Decorators.md
       - Методы классов: Python/Class_methods.md
       - Regex: Python/Regex.md
-      - Zen of Python: Python/Zen.md
     - Пакеты:
       - Создание venv: Python/venv.md
       - uv: Python/uv.md
       - Poetry: Python/poetry.md
+      - Black: Python/black.md
+      - Ruff: Python/ruff.md
+    - Фишки: 
+      - 60th: Python/60th.md
+      - Zen of Python: Python/Zen.md
   - FastAPI:
     - FastAPI: FastAPI/index.md
     - Веб-сокеты: FastAPI/WebSockets.md
@@ -25,11 +28,18 @@ nav:
   - Bash: 
     - Bash: Bash/index.md
     - CLI команды: Bash/CLI.md
+  - SQL:
+    - SQL: SQL/index.md
   - Git:
     - Git: Git/index.md
 
+
+site_name: Utils Docs
+
 theme:
   name: material
+  text: Inter
+  code: Roboto Mono  
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
