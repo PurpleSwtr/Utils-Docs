@@ -37,11 +37,15 @@ nav:
 
 
 site_name: Utils Docs
+site_url: https://PurpleSwtr.github.io/Utils-Docs/
+
+repo_url: https://github.com/PurpleSwtr/Utils-Docs
+repo_name: PurpleSwtr/Utils-Docs
 
 theme:
   name: material
   text: Inter
-  code: Roboto Mono  
+  code: Roboto Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -69,6 +73,15 @@ theme:
     - content.tooltips
     - navigation.indexes
 
+extra:
+  social:
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/purpleswtr
+      name: Мой Telegram
+    - icon: fontawesome/brands/github 
+      link: https://github.com/PurpleSwtr
+      name: Мой GitHub
+
 plugins:
   - search
   - minify:
@@ -92,6 +105,7 @@ markdown_extensions:
       pygments_lang_class: true
   - toc:
       permalink: true
+
 
 extra_css:
   - stylesheets/extra.css
