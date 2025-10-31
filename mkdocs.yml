@@ -34,7 +34,6 @@ nav:
     - SQL: SQL/index.md
   - Git:
     - Git: Git/index.md
-    - 2Git: Git/github/workflows/mkdocs.md
 
 
 site_name: Utils Docs
