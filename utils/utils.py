@@ -35,7 +35,13 @@ def main():
 
     docs_dir = project_dir / config.docs_dir_name
     mkdocs_yml_path = project_dir / 'mkdocs.yml'
-
+    
+    """
+    Функции возвращают множества:
+    1. real_files - файлы которые существуют в директории 
+    2. nav_files - файлы описаны в .yml в блоке nav
+    
+    """
     real_files = get_real_docs_files(str(docs_dir))
     nav_files = get_mkdocs_nav_files(str(mkdocs_yml_path))
 

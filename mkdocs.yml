@@ -12,6 +12,7 @@ nav:
       - Декораторы: Python/Decorators.md
       - Методы классов: Python/Class_methods.md
       - Дандер методы: Python/Dander.md
+      - Asyncio: Python/Asyncio.md
       - Regex: Python/Regex.md
     - Пакеты:
       - Создание venv: Python/venv.md
@@ -38,6 +39,7 @@ nav:
   - Git:
     - Git: Git/index.md
     - Ветки: Git/branches.md
+
 
 
 site_name: Utils Docs
