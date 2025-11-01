@@ -3,6 +3,7 @@ nav:
     - Главная: index.md
     - Развёртывание GitHub Pages: root/CI.md
     - Мой плагин на Python для MkDocs: root/yml_plugin.md
+    - Полезные ссылки: root/links.md
   - Python:
     - Python: Python/index.md
     - Возможности языка:
