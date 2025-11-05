@@ -1,0 +1,12 @@
+{
+  "filewatcher.commands": [
+    {
+      "event": "onFileChange",
+      "match": "mkdocs\\.yml",
+      "vscodeTask": [
+        "workbench.action.tasks.runTask",
+        "mkdocs-yml-create"
+      ]
+    }
+  ]
+}
