@@ -1,46 +1,46 @@
 nav:
   - Главная:
-    - Главная: index.md
-    - Мой плагин на Python для MkDocs: root/yml_plugin.md
-    - Полезные ссылки: root/links.md
+      - Главная: index.md
+      - Мой плагин на Python для MkDocs: root/yml_plugin.md
+      - Полезные ссылки: root/links.md
   - Python:
-    - Python: Python/index.md
-    - Возможности языка:
-      - Строки: Python/strings.md
-      - Списки: Python/lists.md
-      - Файлы: Python/files.md
-      - Декораторы: Python/Decorators.md
-      - Методы классов: Python/Class_methods.md
-      - Дандер методы: Python/Dander.md
-      - Asyncio: Python/Asyncio.md
-      - Regex: Python/Regex.md
-    - Пакеты:
-      - Создание venv: Python/venv.md
-      - uv: Python/uv.md
-      - Poetry: Python/poetry.md
-      - Black: Python/black.md
-      - Ruff: Python/ruff.md
-    - Фишки: 
-      - CLI: Python/CLI.md
-      - 60th: Python/60th.md
-      - Zen of Python: Python/Zen.md
+      - Python: Python/index.md
+      - Возможности языка:
+          - Строки: Python/strings.md
+          - Списки: Python/lists.md
+          - Файлы: Python/files.md
+          - Декораторы: Python/Decorators.md
+          - Itertools: Python/Itertools.md
+          - Functools: Python/Functools.md
+          - Методы классов: Python/Class_methods.md
+          - Дандер методы: Python/Dander.md
+          - Asyncio: Python/Asyncio.md
+          - Regex: Python/Regex.md
+      - Пакеты:
+          - Создание venv: Python/venv.md
+          - uv: Python/uv.md
+          - Poetry: Python/poetry.md
+          - Black: Python/black.md
+          - Ruff: Python/ruff.md
+      - Фишки:
+          - CLI: Python/CLI.md
+          - 60th: Python/60th.md
+          - Zen of Python: Python/Zen.md
   - FastAPI:
-    - FastAPI: FastAPI/index.md
-    - Веб-сокеты: FastAPI/WebSockets.md
-    - Pydantic: FastAPI/Pydantic.md
-    - SQLAlchemy: FastAPI/SQLAlchemy.md
+      - FastAPI: FastAPI/index.md
+      - Веб-сокеты: FastAPI/WebSockets.md
+      - Pydantic: FastAPI/Pydantic.md
+      - SQLAlchemy: FastAPI/SQLAlchemy.md
   - Docker: Docker/index.md
   - Vue.js: Vue.js/index.md
-  - Bash: 
-    - Bash: Bash/index.md
-    - CLI команды: Bash/CLI.md
+  - Bash:
+      - Bash: Bash/index.md
+      - CLI команды: Bash/CLI.md
   - SQL:
-    - SQL: SQL/index.md
+      - SQL: SQL/index.md
   - Git:
-    - Git: Git/index.md
-    - Ветки: Git/branches.md
-
-
+      - Git: Git/index.md
+      - Ветки: Git/branches.md
 
 site_name: Utils Docs
 site_url: https://PurpleSwtr.github.io/Utils-Docs/
@@ -84,7 +84,7 @@ extra:
     - icon: fontawesome/brands/telegram
       link: https://t.me/purpleswtr
       name: Мой Telegram
-    - icon: fontawesome/brands/github 
+    - icon: fontawesome/brands/github
       link: https://github.com/PurpleSwtr
       name: Мой GitHub
 
@@ -100,8 +100,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   # - pymdownx.emoji:
-      # emoji_index: !!python/name:material.extensions.emoji.twemoji
-      # emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # emoji_index: !!python/name:material.extensions.emoji.twemoji
+  # emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.inlinehilite
@@ -111,7 +111,6 @@ markdown_extensions:
       pygments_lang_class: true
   - toc:
       permalink: true
-
 
 extra_css:
   - stylesheets/extra.css
