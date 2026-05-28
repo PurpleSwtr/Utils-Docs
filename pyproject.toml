@@ -12,3 +12,8 @@ dependencies = [
     "mkdocs-minify-plugin>=0.8.0",
     "pymdown-extensions>=10.21.3",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.14",
+]
