@@ -1,0 +1,14 @@
+[project]
+name = "mkdocs-utils"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "mdformat>=1.0.0",
+    "mdformat-gfm>=1.0.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.6",
+    "mkdocs-minify-plugin>=0.8.0",
+    "pymdown-extensions>=10.21.3",
+]

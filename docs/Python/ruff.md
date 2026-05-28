@@ -1,7 +1,7 @@
-
 [Ruff](https://realpython.com/ruff-python/) используется для обеспечения единообразного стиля и форматирования всего кода.
 
 ### Установка
+
 ```sh
 python -m pip install ruff
 ```
@@ -12,7 +12,9 @@ python -m pip install ruff
 ruff format --check
 ruff check
 ```
-###  Автоматическое форматирование
+
+### Автоматическое форматирование
+
 ```sh
 ruff format
 ruff check --fix

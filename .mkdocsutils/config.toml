@@ -1,0 +1,8 @@
+docs_dir = "docs"
+
+[categories]
+Python = "python"
+SQL = "sql"
+Git = "git"
+Bash = "bash"
+Docker = "Dockerfile"

@@ -3,10 +3,11 @@
     {
       "event": "onFileChange",
       "match": "mkdocs\\.yml",
-      "vscodeTask": [
-        "workbench.action.tasks.runTask",
-        "mkdocs-yml-create"
-      ]
+      "vscodeTask": ["workbench.action.tasks.runTask", "mkdocs-yml-create"]
     }
-  ]
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
 }

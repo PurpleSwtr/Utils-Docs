@@ -1,15 +1,27 @@
 name: Utils-Docs
+
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: 3.x
-      - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+          enable-cache: true
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Formatting
+        run: uv run ruff format --check .
+
+      - name: Deploy Docs
+        run: uv run mkdocs gh-deploy --force
