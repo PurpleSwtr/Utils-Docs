@@ -2,3 +2,4 @@ site/
 __pycache__/
 .obsidian
 .ruff_cache
+vscode_extension/

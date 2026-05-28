@@ -41,6 +41,9 @@ nav:
   - Git:
       - Git: Git/index.md
       - Ветки: Git/branches.md
+  - VScode:
+      - Extensions: VScode/Extensions.md
+      - Tasks: VScode/Tasks.md
 
 site_name: Utils Docs
 site_url: https://PurpleSwtr.github.io/Utils-Docs/

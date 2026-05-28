@@ -1,6 +1,6 @@
 docs_dir = "docs"
 
-[categories]
+[categories_codes]
 Python = "python"
 SQL = "sql"
 Git = "git"
