@@ -30,7 +30,7 @@ def full_text_search(text: str, base_path: Path = PATH_DOCS) -> list[tuple[Path,
                 for line_num, line in enumerate(f, start=1):
                     if pattern.search(line):
                         results.append((file_path, line_num))
-        except (PermissionError, OSError):
+        except PermissionError, OSError:
             continue
 
     return results

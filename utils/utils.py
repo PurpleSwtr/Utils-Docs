@@ -2,6 +2,7 @@ from pathlib import Path
 import re
 from config import config
 
+
 def get_real_docs_files(docs_dir: str) -> set:
     found_files = set()
     docs_path = Path(docs_dir)
@@ -12,11 +13,12 @@ def get_real_docs_files(docs_dir: str) -> set:
 
     return found_files
 
+
 def get_mkdocs_nav_files(mkdocs_yml_path: str) -> set:
     nav_files = set()
     pattern = re.compile(r":\s*['\"]?([^'\"]+\.md)['\"]?")
     try:
-        with open(mkdocs_yml_path, 'r', encoding='utf-8') as f:
+        with open(mkdocs_yml_path, "r", encoding="utf-8") as f:
             for line in f:
                 if line.strip() == "" and nav_files:
                     break
@@ -29,13 +31,14 @@ def get_mkdocs_nav_files(mkdocs_yml_path: str) -> set:
 
     return nav_files
 
+
 def main():
     current_script_path = Path(__file__).resolve()
     project_dir = current_script_path.parent.parent
 
     docs_dir = project_dir / config.docs_dir_name
-    mkdocs_yml_path = project_dir / 'mkdocs.yml'
-    
+    mkdocs_yml_path = project_dir / "mkdocs.yml"
+
     """
     Функции возвращают множества:
     1. real_files - файлы которые существуют в директории 
@@ -65,6 +68,7 @@ def main():
                 print(f" - Файл '{file_to_create}' создан.")
             except OSError as e:
                 print(e)
+
 
 if __name__ == "__main__":
     main()
