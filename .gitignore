@@ -3,3 +3,5 @@ __pycache__/
 .obsidian
 .ruff_cache
 vscode_extension/
+mkdocs_utils.egg-info
+build/

@@ -41,7 +41,7 @@ def get_raw_text_for_md(
     if code != "":
         lang = code
     return (
-        f"## {title}\n\n```{lang}\n{text}\n```\n"
+        f"\n## {title}\n\n```{lang}\n{text}\n```\n"
         if is_code or lang != ""
         else f"## {title}\n\n{text}\n\n"
     )
@@ -54,7 +54,9 @@ def write_to_file(text: str, path: Path):
         file.write(text)
 
 
-def add_to_docs(category: str, section: str, title: str, text: str, code: str = ""):
+def add_to_docs(
+    category: str, section: str, title: str, text: str, code: str | None = ""
+):
     path_category = DOCS / category
     path_section = path_category / section
     print(path_section)
