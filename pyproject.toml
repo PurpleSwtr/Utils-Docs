@@ -11,6 +11,7 @@ dependencies = [
     "mkdocs-material>=9.7.6",
     "mkdocs-minify-plugin>=0.8.0",
     "pymdown-extensions>=10.21.3",
+    "python-dotenv>=1.2.2",
     "questionary>=2.1.1",
     "rich>=15.0.0",
     "simple-term-menu>=1.6.6",
