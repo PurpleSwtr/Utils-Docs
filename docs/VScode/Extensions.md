@@ -7,6 +7,7 @@ yo code
 
 npm install --save-dev @types/node
 ```
+
 ## Установка
 
 ```bash
