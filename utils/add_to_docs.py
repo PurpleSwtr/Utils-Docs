@@ -56,12 +56,15 @@ def write_to_file(text: str, path: Path):
 
 def add_to_docs(
     category: str, section: str, title: str, text: str, code: str | None = ""
-):
+) -> None | FileNotFoundError:
     path_category = DOCS / category
     path_section = path_category / section
     print(path_section)
-    if not path_category.exists() or not path_section.exists():
-        return
+    if not path_category.exists():
+        raise FileNotFoundError(category)
+    if not path_section.exists():
+        raise FileNotFoundError(section)
+
     write_to_file(
         get_raw_text_for_md(category=category, title=title, text=text, code=code),
         path_section,
