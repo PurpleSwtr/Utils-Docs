@@ -15,3 +15,9 @@ uv export --format requirements-txt > requirements.txt
 ```bash
 uv add -r requirements.txt
 ```
+
+## Установить свой пакет в режиме разработки
+
+```bash
+uv pip install -e .
+```

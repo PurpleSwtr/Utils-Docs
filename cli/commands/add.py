@@ -2,24 +2,11 @@ import questionary
 
 from utils.add_to_docs import add_to_docs, get_categories_names, get_sections_names
 
-# # Стили в духе современных CLI (Vite, create-next-app, bun init)
-# CLI_STYLE = questionary.Style(
-#     [
-#         ("question", "bold cyan"),
-#         ("answer", "bold green"),
-#         ("pointer", "bold yellow"),
-#         ("highlighted", "yellow"),
-#         ("instruction", "italic dim"),
-#         ("checked", "bold green"),
-#     ]
-# )
-
 
 def create_adding_stmt(categories: list[str]) -> tuple[str, str, str, str, str | None]:
     category = questionary.select(
         "Выберите категорию:",
         choices=categories,
-        # style=CLI_STYLE,
         use_arrow_keys=True,
         use_jk_keys=True,
     ).ask()
@@ -33,7 +20,6 @@ def create_adding_stmt(categories: list[str]) -> tuple[str, str, str, str, str |
     section = questionary.select(
         f"Секция → '{category}':",
         choices=sections,
-        # style=CLI_STYLE,
         use_arrow_keys=True,
         use_jk_keys=True,
     ).ask()
@@ -42,14 +28,12 @@ def create_adding_stmt(categories: list[str]) -> tuple[str, str, str, str, str |
 
     title = questionary.text(
         "Заголовок:",
-        # style=CLI_STYLE,
     ).ask()
     if title is None:
         raise KeyboardInterrupt("Ввод отменён пользователем")
 
     text_body = questionary.text(
         "Текст:",
-        # style=CLI_STYLE,
         multiline=True,
     ).ask()
     if text_body is None:
@@ -58,7 +42,6 @@ def create_adding_stmt(categories: list[str]) -> tuple[str, str, str, str, str |
     code_flag = questionary.confirm(
         "Добавить блок кода?",
         default=False,
-        # style=CLI_STYLE,
     ).ask()
     if code_flag is None:
         raise KeyboardInterrupt("Ввод отменён пользователем")
@@ -67,7 +50,6 @@ def create_adding_stmt(categories: list[str]) -> tuple[str, str, str, str, str |
     if code_flag:
         code = questionary.text(
             "Код:",
-            # style=CLI_STYLE,
             multiline=True,
         ).ask()
         if code is None:
@@ -79,7 +61,6 @@ def create_adding_stmt(categories: list[str]) -> tuple[str, str, str, str, str |
 def add_non_interactive(
     category: str, section: str, title: str, text: str, code: str = ""
 ) -> None:
-    """Неинтерактивная вставка (без проверок – они уже сделаны в main)."""
     add_to_docs(category, section, title, text, code)
 
 
