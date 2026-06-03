@@ -2,25 +2,26 @@
 import { computed, ref } from 'vue'
 import type { NavigationMenuItem, StepperItem } from '@nuxt/ui'
 import { useToast } from '@nuxt/ui/runtime/composables/useToast.js'
+import axios from 'axios'
 
 const toast = useToast()
 const isSyncing = ref(false)
 const modalOpen = ref(false)
 const currentStep = ref(0)
-const step1Status = ref<'pending' | 'current' | 'completed'>('current')
-const step2Status = ref<'pending' | 'current' | 'completed'>('pending')
+
+const commitMessage = ref('')
 
 const steps = computed<StepperItem[]>(() => [
   {
-    title: 'Отслеживание изменений',
-    icon: step1Status.value === 'completed' ? 'i-tabler-check' : 'i-tabler-alert-circle',
+    title: 'Подготовка изменений',
+    icon: currentStep.value > 0 ? 'i-tabler-check' : 'i-tabler-alert-circle',
   },
   {
-    title: 'Синхронизация данных',
-    icon: step2Status.value === 'completed' ? 'i-tabler-check' : 'i-tabler-refresh',
+    title: 'Отправка на GitHub',
+    icon: currentStep.value > 1 ? 'i-tabler-check' : 'i-tabler-refresh',
   },
   {
-    title: 'Данные обновлены',
+    title: 'Данные успешно обновлены',
     icon: 'i-tabler-brand-github',
   },
 ])
@@ -28,17 +29,54 @@ const steps = computed<StepperItem[]>(() => [
 const sync = async () => {
   if (isSyncing.value) return
 
-  currentStep.value = 1
+  if (!commitMessage.value.trim()) {
+    toast.add({
+      title: 'Ошибка валидации',
+      description: 'Введите сообщение коммита перед синхронизацией',
+      icon: 'i-tabler-alert-circle',
+      color: 'error',
+    })
+    return
+  }
+
   isSyncing.value = true
+  currentStep.value = 1
 
   try {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await axios.post(
+      'http://127.0.0.1:8000/api/v1/sync/sync',
+      {},
+      {
+        params: {
+          msg: commitMessage.value.trim(),
+        },
+        headers: {
+          accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+
+    await new Promise((resolve) => setTimeout(resolve, 800))
+
     currentStep.value = 2
 
-    toast.add({ title: 'Синхронизация завершена', color: 'success' })
-  } catch {
+    toast.add({
+      title: 'Успешно!',
+      description: 'Синхронизация запущена в фоновом режиме',
+      icon: 'i-tabler-file-check',
+      color: 'success',
+    })
+  } catch (err: any) {
+    console.error(err)
     currentStep.value = 0
-    toast.add({ title: 'Ошибка', color: 'error' })
+
+    toast.add({
+      title: 'Ошибка синхронизации',
+      description: err.response?.data?.detail || err.message,
+      icon: 'i-tabler-alert-circle',
+      color: 'error',
+    })
   } finally {
     isSyncing.value = false
   }
@@ -73,7 +111,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       <UNavigationMenu :items="items" />
 
       <template #right>
-        <UColorModeButton />
+        <UColorModeButton class="hover:cursor-pointer" />
         <UTooltip text="GitHub">
           <UButton
             color="neutral"
@@ -86,13 +124,26 @@ const items = computed<NavigationMenuItem[]>(() => [
         </UTooltip>
 
         <UModal v-model:open="modalOpen">
-          <UButton label="Синхронизация" icon="i-tabler-refresh" color="neutral" variant="subtle" />
+          <UButton
+            class="hover:cursor-pointer"
+            label="Синхронизация"
+            icon="i-tabler-refresh"
+            color="neutral"
+            variant="subtle"
+          />
 
           <template #content>
-            <div class="p-4">
+            <div class="p-4 flex flex-col gap-4">
               <UStepper v-model="currentStep" :items="steps" orientation="vertical" />
-              <!-- steps теперь только title/description, status не нужен -->
-              <div class="mt-4 flex justify-end">
+
+              <div v-if="currentStep < 2" class="flex flex-col gap-1.5">
+                <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Сообщение для коммита Git
+                </label>
+                <UInput v-model="commitMessage" :disabled="isSyncing" />
+              </div>
+
+              <div class="flex justify-end">
                 <UButton
                   size="sm"
                   :loading="isSyncing"
