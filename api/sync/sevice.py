@@ -1,7 +1,6 @@
 import asyncio
 import os
 import subprocess
-from typing import List
 
 from api.core.config import config
 
@@ -11,7 +10,7 @@ class SyncService:
         self.repo_path = config.DOCS.parent.parent
         pass
 
-    def _sync_execute_cmd(self, program: str, args: List[str]) -> str:
+    def _sync_execute_cmd(self, program: str, args: list[str]) -> str:
         if not os.path.exists(self.repo_path):
             raise FileNotFoundError(f"директория не найдена: {self.repo_path}")
 
@@ -29,7 +28,7 @@ class SyncService:
 
         return result.stdout.strip()
 
-    async def run_cmd(self, program: str, args: List[str]) -> str:
+    async def run_cmd(self, program: str, args: list[str]) -> str:
         return await asyncio.to_thread(self._sync_execute_cmd, program, args)
 
     async def sync_github(self, msg: str):

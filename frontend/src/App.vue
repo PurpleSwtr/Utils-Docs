@@ -94,9 +94,9 @@ const items = computed<NavigationMenuItem[]>(() => [
     icon: 'i-tabler-file',
   },
   {
-    label: 'Синхронизировать',
-    to: '/sync',
-    icon: 'i-tabler-refresh',
+    label: 'Настройки',
+    to: '/settings',
+    icon: 'i-tabler-settings',
   },
 ])
 </script>
