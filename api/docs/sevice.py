@@ -1,6 +1,12 @@
 from fastapi import HTTPException
 
-from utils.add_to_docs import add_to_docs, get_categories_names, get_sections_names
+from api.docs.models import DocsNote
+from utils.add_to_docs import (
+    add_to_docs,
+    get_categories_names,
+    get_md_text,
+    get_sections_names,
+)
 
 
 class DocsService:
@@ -17,10 +23,12 @@ class DocsService:
         return get_sections_names(category=category)
 
     @staticmethod
-    def add(
-        category: str, section: str, title: str, text: str, code: str = ""
-    ) -> None | HTTPException:
+    def get_md_text(category: str, section: str):
+        return get_md_text(category=category, section=section)
+
+    @staticmethod
+    def add(docs_note: DocsNote) -> None | HTTPException:
         try:
-            add_to_docs(category, section, title, text, code)
+            add_to_docs(**docs_note.model_dump())
         except FileNotFoundError as e:
             raise HTTPException(status_code=404, detail=f"Файл {e} не найден")

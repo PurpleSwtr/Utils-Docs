@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
 from api.core.config import config
+from api.docs.models import DocsNote
 from api.docs.sevice import DocsService
 
 router = APIRouter(prefix="/docs", tags=["Docs"])
@@ -21,8 +22,11 @@ def get_sections(category: str):
     return DocsService.get_sections_names(category=category)
 
 
+@router.get("/md_text")
+def get_md_text(category: str, section: str):
+    return DocsService.get_md_text(category=category, section=section)
+
+
 @router.post("/add")
-def add_to_docs(
-    category: str, section: str, title: str, text: str, code: str = ""
-) -> None:
-    DocsService.add(category, section, title, text, code)
+def add_to_docs(docs_note: DocsNote) -> None:
+    DocsService.add(docs_note)

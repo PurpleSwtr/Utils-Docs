@@ -2,13 +2,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.docs.router import router as docs_router
+from api.sync.router import router as sync_router
 
 app = FastAPI(
-    title="Technology-Snippets",
+    title="MkDocs-Utils",
     root_path="/api/v1",
 )
 
-origins = ["*"]
+origins = [
+    "http://localhost:5173",
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,3 +22,4 @@ app.add_middleware(
 )
 
 app.include_router(docs_router)
+app.include_router(sync_router)

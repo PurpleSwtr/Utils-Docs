@@ -11,7 +11,7 @@ CONFIG = ROOT / ".mkdocsutils" / "config.toml"
 
 
 def get_categories_names() -> list:
-    return [p.name for p in DOCS.iterdir() if p.is_dir()]
+    return [p.name for p in DOCS.iterdir() if p.is_dir() and p.name != "stylesheets"]
 
 
 def get_sections_names(category: str) -> list:
@@ -59,7 +59,7 @@ def add_to_docs(
 ) -> None | FileNotFoundError:
     path_category = DOCS / category
     path_section = path_category / section
-    print(path_section)
+    # print(path_section)
     if not path_category.exists():
         raise FileNotFoundError(category)
     if not path_section.exists():
@@ -69,6 +69,20 @@ def add_to_docs(
         get_raw_text_for_md(category=category, title=title, text=text, code=code),
         path_section,
     )
+
+
+def get_md_text(
+    category: str,
+    section: str,
+):
+    path_category = DOCS / category
+    path_section = path_category / section
+    if not path_category.exists():
+        raise FileNotFoundError(category)
+    if not path_section.exists():
+        raise FileNotFoundError(section)
+    with open(file=path_section, mode="r", encoding="utf-8") as f:
+        return f.read()
 
 
 if __name__ == "__main__":

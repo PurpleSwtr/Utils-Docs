@@ -1,0 +1,8 @@
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def sync_with_github():
+    subprocess.run()
