@@ -7,3 +7,6 @@ SQL = "sql"
 Git = "git"
 Bash = "bash"
 Docker = "Dockerfile"
+
+[excluded_directories]
+dirs = ["stylesheets", "assets"]

@@ -11,7 +11,14 @@ CONFIG = ROOT / ".mkdocsutils" / "config.toml"
 
 
 def get_categories_names() -> list:
-    return [p.name for p in DOCS.iterdir() if p.is_dir() and p.name != "stylesheets"]
+    with open(CONFIG, "rb") as f:
+        data = tomllib.load(f)
+    exclude_directories = data.get("excluded_directories", {}).get("dirs", [])
+    return [
+        p.name
+        for p in DOCS.iterdir()
+        if p.is_dir() and p.name not in exclude_directories
+    ]
 
 
 def get_sections_names(category: str) -> list:

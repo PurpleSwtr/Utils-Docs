@@ -89,14 +89,20 @@ const items = computed<NavigationMenuItem[]>(() => [
     icon: 'i-tabler-plus',
   },
   {
-    label: 'База знаний',
-    to: '/docs',
-    icon: 'i-tabler-file',
+    label: 'Добавить файл',
+    to: '/add_file',
+    icon: 'i-tabler-file-upload',
   },
   {
     label: 'Настройки',
     to: '/settings',
     icon: 'i-tabler-settings',
+  },
+  {
+    label: 'База знаний',
+    to: 'https://purpleswtr.github.io/Utils-Docs/',
+    target: '_blank',
+    icon: 'i-tabler-database-share',
   },
 ])
 </script>
@@ -116,7 +122,7 @@ const items = computed<NavigationMenuItem[]>(() => [
           <UButton
             color="neutral"
             variant="ghost"
-            to="https://purpleswtr.github.io/Utils-Docs/"
+            to="https://github.com/PurpleSwtr/Utils-Docs"
             target="_blank"
             aria-label="GitHub"
             icon="i-tabler-brand-github"

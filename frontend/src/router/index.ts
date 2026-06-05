@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', component: MainView },
-    { path: '/docs', component: FilesView },
+    { path: '/add_file', component: FilesView },
     { path: '/sync', component: SyncView },
     { path: '/settings', component: SettingsView },
   ],
