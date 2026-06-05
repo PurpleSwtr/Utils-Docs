@@ -12,3 +12,9 @@ git rm --cached <имя_файла>
 git rm -r --cached */<директория>
 git rm -r --cached <директория>
 ```
+
+## Безопасный откат последнего коммита
+
+```git
+git reset --soft HEAD~1
+```
