@@ -1,5 +1,7 @@
 site/
 __pycache__/
+.venv/
+venv/
 .obsidian
 .ruff_cache
 vscode_extension/
