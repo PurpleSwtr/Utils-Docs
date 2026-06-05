@@ -19,3 +19,9 @@ ENV UV_COMPILE_BYTECODE=1 \
 
 FROM python:3.13-slim-trixie AS runtime
 ```
+
+## Подключиться к контейнеру из терминала
+
+```Dockerfile
+docker exec -it <ID_или_имя_контейнера> bash
+```

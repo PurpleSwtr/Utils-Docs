@@ -5,9 +5,7 @@
       "label": "mkdocs-yml-create",
       "type": "shell",
       "command": "python",
-      "args": [
-        "utils/utils.py"
-      ],
+      "args": ["utils/utils.py"],
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -23,6 +21,35 @@
         "close": true
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Run Frontend",
+      "type": "shell",
+      "command": "cd frontend && npm run dev",
+      "problemMatcher": [],
+      "presentation": {
+        "group": "dev-servers",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Run Backend",
+      "type": "shell",
+      "command": "uvicorn api.main:app --reload",
+      "problemMatcher": [],
+      "presentation": {
+        "group": "dev-servers",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Run Fullstack",
+      "dependsOn": ["Run Frontend", "Run Backend"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }
