@@ -2,6 +2,7 @@ docs_dir = "docs"
 
 [categories_codes]
 Python = "python"
+FastAPI = "python"
 SQL = "sql"
 Git = "git"
 Bash = "bash"

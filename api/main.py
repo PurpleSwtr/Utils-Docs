@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 
 from api.docs.router import router as docs_router
 from api.settings.router import router as settings_router
@@ -9,6 +10,12 @@ app = FastAPI(
     title="MkDocs-Utils",
     root_path="/api/v1",
 )
+
+
+@app.get("/", include_in_schema=False)
+async def root_redirect():
+    return RedirectResponse(url="/docs")
+
 
 origins = [
     "http://localhost:5173",
