@@ -45,7 +45,6 @@ docker compose up -d
 
 ```bash
 docker compose build --no-cache
-# или сразу со сборкой и запуском:
 docker compose up -d --build --no-cache
 ```
 
