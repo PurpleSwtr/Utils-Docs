@@ -25,3 +25,40 @@ FROM python:3.13-slim-trixie AS runtime
 ```Dockerfile
 docker exec -it <ID_или_имя_контейнера> bash
 ```
+
+## Остановка и удаление: `docker compose down`
+
+```bash
+docker compose down
+```
+
+## Запуск в фоновом режиме
+
+```bash
+docker compose up -d
+```
+
+??? note "Фишечка: Принудительное пересоздание"
+    Флаг `--force-recreate` - заставить Docker пересоздать контейнеры с нуля, даже если явных изменений не было.
+
+## Сборка без кэша
+
+```bash
+docker compose build --no-cache
+
+docker compose up -d --build --no-cache
+```
+
+!!! tip "Фишечка: Борьба с призраками кэша"
+    Флаг `--no-cache` заставляет Docker игнорировать все сохраненные слои при сборке образа.
+
+## Просмотр логов в реальном времени
+
+```bash
+docker compose logs -f
+```
+
+??? note "Фишечка: Фильтрация и цвет"
+   `-f` (follow) для непрерывного вывода. 
+   `--tail=100` - увидеть только последние 100 строк
+   `docker compose logs -f --tail=50 nginx` - имя конкретного сервиса в конце.
