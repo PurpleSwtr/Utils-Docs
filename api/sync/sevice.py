@@ -8,7 +8,7 @@ from api.core.config import config
 class SyncService:
     def __init__(self):
         self.repo_path = config.DOCS.parent.parent
-        pass
+        self.authenticated_git_url = f"https://x-access-token:{config.TOKEN}@github.com/{config.REPO_OWNER}/{config.REPO_NAME}.git"
 
     def _sync_execute_cmd(self, program: str, args: list[str]) -> str:
         if not os.path.exists(self.repo_path):
@@ -33,6 +33,10 @@ class SyncService:
 
     async def sync_github(self, msg: str, target_branch: str = "bot/docs-auto-sync"):
         try:
+            await self.run_cmd(
+                "git", ["remote", "set-url", "origin", self.authenticated_git_url]
+            )
+
             status = await self.run_cmd("git", ["status", "--porcelain", "docs"])
             if not status.strip():
                 return {
@@ -64,7 +68,8 @@ class SyncService:
             }
 
         except Exception as e:
+            print(e)
             return {"status": "error", "message": str(e)}
 
     async def sync_run(self, msg: str):
-        await self.sync_github(msg)
+        return await self.sync_github(msg)

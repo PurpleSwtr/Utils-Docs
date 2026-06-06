@@ -44,6 +44,8 @@ nav:
   - VScode:
       - Extensions: VScode/Extensions.md
       - Tasks: VScode/Tasks.md
+  - MkDocs:
+      - Сниппеты: MkDocs/index.md
 
 site_name: Utils Docs
 site_url: https://PurpleSwtr.github.io/Utils-Docs/

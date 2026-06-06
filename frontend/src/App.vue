@@ -43,7 +43,7 @@ const sync = async () => {
   currentStep.value = 1
 
   try {
-    await axios.post(
+    const response = await axios.post(
       'http://127.0.0.1:8000/api/v1/sync/sync',
       {},
       {
@@ -56,7 +56,18 @@ const sync = async () => {
         },
       },
     )
-
+    if (response.data.status === 'error') {
+      throw new Error(response.data.message)
+    }
+    if (response.data.status === 'skipped') {
+      toast.add({
+        title: 'Пропущено',
+        description: 'Нет изменений для синхронизации',
+        icon: 'i-tabler-info-circle',
+        color: 'warning',
+      })
+      return
+    }
     await new Promise((resolve) => setTimeout(resolve, 800))
 
     currentStep.value = 2
