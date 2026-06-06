@@ -1,4 +1,4 @@
-### Получить директорию файла
+## Получить директорию файла
 
 ```python
 import os
@@ -13,13 +13,13 @@ current_dir = os.path.dirname(current_file_path)
 parent_dir = os.path.dirname(current_dir)
 ```
 
-### Создать путь для любой OC
+## Создать путь для любой OC
 
 ```python
 dir = os.path.join(current_dir, config.docs_dir_name)
 ```
 
-### Пройтись по всем поддиректориям/файлам в директории
+## Пройтись по всем поддиректориям/файлам в директории
 
 ```python
 start_directory = 'Тут начальный путь'
@@ -30,7 +30,7 @@ for current_path, subdirectories, files in os.walk(start_directory):
         print(os.path.join(current_path, file))
 ```
 
-### Поиск всех файлов в папке и подпапках
+## Поиск всех файлов в папке и подпапках
 
 ```python
 from pathlib import Path
@@ -42,14 +42,14 @@ for file_path in folder_path.rglob("*"):
         print(file_path)
 ```
 
-### Имя файла без расширения
+## Имя файла без расширения
 
 ```python
 from pathlib import Path
 Path("folder/file.txt").stem   # 'file'
 ```
 
-### Прочитать все файлы в папке
+## Прочитать все файлы в папке
 
 ```python
 for p in Path("my_dir").iterdir():
@@ -57,7 +57,7 @@ for p in Path("my_dir").iterdir():
         print(p)
 ```
 
-### Чтение/запись TOML (Python 3.11+)
+## Чтение/запись TOML (Python 3.11+)
 
 ```python
 import tomllib
@@ -66,7 +66,7 @@ with open("pyproject.toml", "rb") as f:
 deps = data.get("dependencies", [])
 ```
 
-### Сгенерировать `requirements.txt` из `pyproject.toml`
+## Сгенерировать `requirements.txt` из `pyproject.toml`
 
 ```python
 import tomllib
@@ -77,14 +77,14 @@ with open("requirements.txt", "w") as f:
         f.write(dep + "\n")
 ```
 
-### Изменить переменную в `.env` файле
+## Изменить переменную в `.env` файле
 
 ```python
 from dotenv import set_key
 set_key(".env", "TASK", "123")
 ```
 
-### Чтение `.env` и переменных окружения
+## Чтение `.env` и переменных окружения
 
 ```python
 from dotenv import load_dotenv

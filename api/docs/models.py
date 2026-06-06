@@ -6,4 +6,5 @@ class DocsNote(BaseModel):
     section: str
     title: str
     text: str
+    is_note: bool
     code: str = ""

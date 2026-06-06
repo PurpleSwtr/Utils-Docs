@@ -24,13 +24,23 @@
           />
         </UFormField>
 
+        <UFormField label="Форматирование" class="col-span-2">
+           <div class="flex items-center gap-4">
+             <UInput
+             v-model="form.code"
+             placeholder="Метка языка"
+             :disabled="form.isNote"
+             />
+             <USwitch
+               v-model="form.isNote"
+               label="Режим заметки"
+             />
+           </div>
+         </UFormField>
         <UFormField label="Заголовок" required>
           <UInput v-model="form.title" placeholder="Введите заголовок" />
         </UFormField>
 
-        <UFormField label="Метка для кода">
-          <UInput v-model="form.code" placeholder="Введите метку для кода" />
-        </UFormField>
 
         <UFormField label="Текст" required class="col-span-2">
           <UTextarea
@@ -75,6 +85,7 @@ const form = ref({
   title: '',
   code: '',
   text: '',
+  isNote: false
 })
 
 const preventSearchTermUpdate = (): void => {}
@@ -135,7 +146,8 @@ const addToDocs = async () => {
       section: form.value.section,
       title: form.value.title,
       text: form.value.text,
-      code: form.value.code || '',
+      code: form.value.isNote ? '' : (form.value.code || ''),
+      is_note: form.value.isNote,
     }
 
     const response = await axios.post('http://127.0.0.1:8000/api/v1/docs/add', payload, {
@@ -155,6 +167,8 @@ const addToDocs = async () => {
       title: '',
       code: form.value.code,
       text: '',
+      isNote: form.value.isNote,
+
     }
   } catch (err: any) {
     console.error(err)

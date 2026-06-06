@@ -1,4 +1,4 @@
-### Использовать в контейнере порт 8080 TCP
+## Использовать в контейнере порт 8080 TCP
 
 ```Dockerfile
 EXPOSE 8080
@@ -26,7 +26,7 @@ FROM python:3.13-slim-trixie AS runtime
 docker exec -it <ID_или_имя_контейнера> bash
 ```
 
-## Остановка и удаление: `docker compose down`
+## Остановка и удаление
 
 ```bash
 docker compose down
