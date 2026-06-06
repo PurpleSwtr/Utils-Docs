@@ -28,12 +28,12 @@
 }
 
 .md-typeset h1 {
-  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  background: var(--md-accent-fg-color);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 3px solid;
-  border-image: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color)) 1;
+  border-image: linear-gradient(-135deg, var(--md-primary-fg-color), var(--md-accent-fg-color)) 1;
 }
 
 .md-tabs__link {
@@ -169,3 +169,7 @@ li + .md-nav__item--section {
 }
 
 
+.md-header__button.md-logo img {
+    height: 2rem;
+    width: auto;
+}

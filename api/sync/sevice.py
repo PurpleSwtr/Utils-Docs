@@ -7,7 +7,7 @@ from api.core.config import config
 
 class SyncService:
     def __init__(self):
-        self.repo_path = config.DOCS.parent.parent
+        self.repo_path = config.DOCS.parent
         self.authenticated_git_url = f"https://x-access-token:{config.TOKEN}@github.com/{config.REPO_OWNER}/{config.REPO_NAME}.git"
 
     def _sync_execute_cmd(self, program: str, args: list[str]) -> str:

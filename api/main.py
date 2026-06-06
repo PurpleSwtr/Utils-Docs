@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 
 from api.docs.router import router as docs_router
+from api.files.router import router as files_router
 from api.settings.router import router as settings_router
 from api.sync.router import router as sync_router
 
@@ -35,3 +36,4 @@ app.add_middleware(
 app.include_router(docs_router)
 app.include_router(sync_router)
 app.include_router(settings_router)
+app.include_router(files_router)

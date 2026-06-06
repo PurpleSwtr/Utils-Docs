@@ -1,7 +1,9 @@
 nav:
   - Главная:
       - Главная: index.md
-      - Мой плагин на Python для MkDocs: root/yml_plugin.md
+      - Самописные плагины для MkDocs:
+          - Мой первый плагин на Python для MkDocs: root/yml_plugin.md
+          - Приложение для ведения и синхронизации с базой знаний: root/app_plugin.md
       - Полезные ссылки: root/links.md
   - Python:
       - Python: Python/index.md
@@ -55,6 +57,8 @@ repo_name: PurpleSwtr/Utils-Docs
 
 theme:
   name: material
+  logo: assets/icon.svg
+  favicon: assets/icon.svg
   text: Inter
   code: Roboto Mono
   palette:

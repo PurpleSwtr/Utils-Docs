@@ -3,7 +3,7 @@ from api.core.config import config
 
 class SettingsService:
     def __init__(self):
-        self.repo_path = config.DOCS.parent.parent
+        self.repo_path = config.DOCS.parent
         pass
 
     def get_mkdocs_yml(self):
