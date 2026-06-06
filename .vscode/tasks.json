@@ -50,6 +50,16 @@
         "kind": "build",
         "isDefault": true
       }
-    }
+    },
+    {
+      "label": "Run & Build MkDocs",
+      "type": "shell",
+      "command": "mkdocs serve",
+      "problemMatcher": [],
+      "presentation": {
+        "group": "dev-servers",
+        "panel": "dedicated"
+      }
+    },
   ]
 }

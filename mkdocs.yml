@@ -16,6 +16,11 @@ nav:
           - Дандер методы: Python/Dander.md
           - Asyncio: Python/Asyncio.md
           - Regex: Python/Regex.md
+      - FastAPI:
+          - FastAPI: Python/FastAPI/index.md
+          - Веб-сокеты: Python/FastAPI/WebSockets.md
+          - Pydantic: Python/FastAPI/Pydantic.md
+          - SQLAlchemy: Python/FastAPI/SQLAlchemy.md
       - Пакеты:
           - Создание venv: Python/venv.md
           - uv: Python/uv.md
@@ -26,11 +31,6 @@ nav:
           - CLI: Python/CLI.md
           - 60th: Python/60th.md
           - Zen of Python: Python/Zen.md
-  - FastAPI:
-      - FastAPI: FastAPI/index.md
-      - Веб-сокеты: FastAPI/WebSockets.md
-      - Pydantic: FastAPI/Pydantic.md
-      - SQLAlchemy: FastAPI/SQLAlchemy.md
   - Docker: Docker/index.md
   - Vue.js: Vue.js/index.md
   - Bash:

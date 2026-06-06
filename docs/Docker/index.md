@@ -45,12 +45,10 @@ docker compose up -d
 
 ```bash
 docker compose build --no-cache
-
-docker compose up -d --build --no-cache
 ```
 
 ??? tip "Фишечка: Игнорировать кэш"
-    Флаг `--no-cache` заставляет Docker игнорировать все сохраненные слои при сборке образа.
+    Флаг `--no-cache` заставляет Docker игнорировать все закешированные слои при сборке образа.
 
 ## Просмотр логов в реальном времени
 
