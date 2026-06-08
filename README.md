@@ -11,6 +11,20 @@
 
 # Utils Docs
 
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?logo=vue.js&logoColor=white)
+![Nuxt UI](https://img.shields.io/badge/Nuxt_UI-v4-00DC82?logo=nuxt&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
+![MkDocs](https://img.shields.io/badge/MkDocs-Material-546d78?logo=materialformkdocs&logoColor=white)
+
+![Build Status](https://img.shields.io/github/actions/workflow/status/PurpleSwtr/Utils-Docs/mkdocs.yml?label=Build&logo=github)
+![License](https://img.shields.io/github/license/PurpleSwtr/Utils-Docs?color=blue)
+
+</div>
+
 Это моя личная **база знаний**, где я собираю полезные команды, код, сниппеты и решения разных задачек.
 
 Буду называть это своим конспектом для усвоения материала!
