@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://purpleswtr.github.io/Utils-Docs/"><img src="./assets/logo.png" alt="Utils-Docs"></a>
+  <a href="https://purpleswtr.github.io/Utils-Docs/"><img src="./docs/assets/logo.png" alt="Utils-Docs"></a>
 </p>
 
 ---

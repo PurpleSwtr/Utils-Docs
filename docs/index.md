@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://purpleswtr.github.io/Utils-Docs/"><img src="./assets/logo.png" alt="FastAPI"></a>
+  <img src="./assets/logo.png" alt="FastAPI"></a>
 </p>
 
 ## Привет!
