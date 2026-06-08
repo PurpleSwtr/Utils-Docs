@@ -46,7 +46,7 @@
           <UTextarea
             v-model="form.text"
             placeholder="Введите текст записи"
-            :rows="5"
+            :rows="14"
             class="w-full"
           />
         </UFormField>

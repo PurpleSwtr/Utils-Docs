@@ -54,6 +54,8 @@ site_url: https://PurpleSwtr.github.io/Utils-Docs/
 
 repo_url: https://github.com/PurpleSwtr/Utils-Docs
 repo_name: PurpleSwtr/Utils-Docs
+site_author: PurpleSwtr
+copyright: Copyright © 2026 PurpleSwtr
 
 theme:
   name: material
