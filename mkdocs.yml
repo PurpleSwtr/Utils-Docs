@@ -122,6 +122,8 @@ markdown_extensions:
       pygments_lang_class: true
   - toc:
       permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_css:
   - stylesheets/extra.css
