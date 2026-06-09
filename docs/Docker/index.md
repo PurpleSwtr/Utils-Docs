@@ -60,3 +60,9 @@ docker compose logs -f
     `-f` (follow) для непрерывного вывода.
     `--tail=100` - увидеть только последние 100 строк
     `docker compose logs -f --tail=50 nginx` - имя конкретного сервиса в конце.
+
+## Добавление зеркала для скачивания через uv
+
+```Dockerfile
+ENV UV_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
+```
