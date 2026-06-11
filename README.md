@@ -36,8 +36,8 @@
 И также неплохой опыт в целом по тому, как вести документацию.
 
 ## Посмотреть превью и прочитать про плагины:
-  - [Первый плагин на Python для отслеживания mkdocs.yml файла](https://purpleswtr.github.io/Utils-Docs/root/yml_plugin/)
-  - [Полноценное приложение для ведения базы знаний](https://purpleswtr.github.io/Utils-Docs/root/app_plugin/)
+  - [Первый плагин на Python для отслеживания mkdocs.yml файла](https://purpleswtr.github.io/Utils-Docs/root/mkdocs_plugins/yml_plugin/)
+  - [Полноценное приложение для ведения базы знаний](https://purpleswtr.github.io/Utils-Docs/root/mkdocs_plugins/app_plugin/)
 
 ## Какие бонусы в этом я для себя вижу:
 
