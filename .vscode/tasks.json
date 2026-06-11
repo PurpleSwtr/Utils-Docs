@@ -61,5 +61,18 @@
         "panel": "dedicated"
       }
     },
+    {
+      "label": "Run Autogenerate Todo.md",
+      "type": "shell",
+      "command": "uv run python -m api.table_generator.service",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "close": true
+      },
+    },
   ]
 }

@@ -1,3 +1,6 @@
+import asyncio
+import io
+import zipfile
 from pathlib import Path
 
 from fastapi import HTTPException, UploadFile
@@ -37,3 +40,20 @@ class FilesService:
                     f.write(content)
 
                 return {"filename": result_filename, "status": "success"}
+
+    @staticmethod
+    def create_zip(source_dir: Path) -> bytes:
+        buffer = io.BytesIO()
+
+        with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+            for file_path in source_dir.rglob("*"):
+                if file_path.is_file():
+                    arcname = file_path.relative_to(source_dir)
+                    zip_file.write(file_path, arcname)
+
+        buffer.seek(0)
+        return buffer.getvalue()
+
+    async def get_zip_docs(self) -> bytes:
+        zip_bytes = await asyncio.to_thread(self.create_zip, config.DOCS)
+        return zip_bytes

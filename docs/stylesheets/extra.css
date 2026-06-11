@@ -53,30 +53,34 @@
   border-radius: 3px 3px 0 0;
 }
 
-.md-typeset ul {
-list-style: none;
-padding-left: 1rem;
+.md-typeset ul:not(.task-list) {
+  list-style: none;
+  padding-left: 1rem;
 }
 
-.md-typeset ul li {
-position: relative;
-padding-left: 1.5rem;
-transition: transform 0.2s ease;
+.md-typeset ul:not(.task-list) > li {
+  position: relative;
+  padding-left: 1.5rem;
+  transition: transform 0.2s ease;
 }
 
-.md-typeset ul li:hover {
-transform: translateX(4px);
-color: var(--md-primary-fg-color);
-
+.md-typeset ul:not(.task-list) > li:hover {
+  transform: translateX(4px);
+  /* color: var(--md-primary-fg-color); */
 }
 
-.md-typeset ul li::before {
-content: '▸';
-position: absolute;
-left: 0;
-color: var(--md-accent-fg-color);
-font-weight: bold;
+.md-typeset ul:not(.task-list) > li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--md-accent-fg-color);
+  font-weight: bold;
 }
+
+.md-typeset .task-list .task-list {
+  padding-left: 1.5rem;
+}
+
 
 .md-typeset ol {
 list-style: decimal;

@@ -4,10 +4,20 @@
       "event": "onFileChange",
       "match": "mkdocs\\.yml",
       "vscodeTask": ["workbench.action.tasks.runTask", "mkdocs-yml-create"]
+    },
+    {
+      "event": "onFileChange",
+      "match": "TODO\\.md",
+      "vscodeTask": ["workbench.action.tasks.runTask", "Run Autogenerate Todo.md"]
     }
   ],
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
-  }
+  },
+  "commentTranslate.hover.enabled": true,
+  "commentTranslate.targetLanguage": "ru",
+  "cSpell.words": [
+    "вкладкедочка"
+  ]
 }

@@ -40,7 +40,7 @@ class TableGeneratorService:
     @staticmethod
     def paste_table_to_file(data: list, filepath: Path):
         md_table = tabulate(
-            data, headers=["Текущие задачи", "Выполено"], tablefmt="github"
+            data, headers=["Текущие задачи", "Выполнено"], tablefmt="github"
         )
         with open(file=filepath, mode="w", encoding="utf-8") as file:
             file.write(md_table)

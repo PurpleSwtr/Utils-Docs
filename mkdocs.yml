@@ -2,8 +2,9 @@ nav:
   - Главная:
       - Главная: index.md
       - Самописные плагины для MkDocs:
-          - Мой первый плагин на Python для MkDocs: root/yml_plugin.md
-          - Приложение для ведения и синхронизации с базой знаний: root/app_plugin.md
+          - Мой первый плагин на Python для MkDocs: root/mkdocs_plugins/yml_plugin.md
+          - Приложение для ведения и синхронизации с базой знаний: root/mkdocs_plugins/app_plugin.md
+          - Автогенерация задач с сортировкой на основе TODO.md: root/mkdocs_plugins/autogenerate_todo.md
           - Прогресс добавления функционала: root/todo.md
       - Полезные ссылки: root/links.md
   - Python:
@@ -119,6 +120,7 @@ markdown_extensions:
   # - pymdownx.emoji:
   # emoji_index: !!python/name:material.extensions.emoji.twemoji
   # emoji_generator: !!python/name:material.extensions.emoji.to_svg
+#   - mdx_truly_sane_lists
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.inlinehilite
@@ -128,8 +130,7 @@ markdown_extensions:
       pygments_lang_class: true
   - toc:
       permalink: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
+
 
 extra_css:
   - stylesheets/extra.css
