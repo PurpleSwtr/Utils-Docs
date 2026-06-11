@@ -8,4 +8,4 @@ router = APIRouter(prefix="/table_generator ", tags=["TableGenerator"])
 @router.patch("/generate_todo")
 def generate_todo() -> None:
     service = TableGeneratorService()
-    service.create_md_table()
+    service.create_mk_checkbox_list()
