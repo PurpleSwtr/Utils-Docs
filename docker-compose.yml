@@ -13,6 +13,7 @@ services:
     volumes:
       - ./docs:/app/docs
       - ./.git:/app/.git
+      - ./TODO.md:/app/TODO.md
     user: "root"
     working_dir: /app
 

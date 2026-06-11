@@ -22,3 +22,17 @@ print(chunks)
 # [(1, 2, 3), (4, 5, 6), (7, 8)]
 
 ```
+
+## Объединить списки поэлементно
+
+```python
+from itertools import zip_longest
+
+A = ['a', 'b', 'c']
+B = [1, 2]
+
+result = list(zip_longest(spisok_A, spisok_B, fillvalue=''))
+print(result)
+# [('a', 1), ('b', 2), ('c', '')]
+
+```

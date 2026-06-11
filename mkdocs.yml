@@ -4,6 +4,7 @@ nav:
       - Самописные плагины для MkDocs:
           - Мой первый плагин на Python для MkDocs: root/yml_plugin.md
           - Приложение для ведения и синхронизации с базой знаний: root/app_plugin.md
+          - Прогресс добавления функционала: root/todo.md
       - Полезные ссылки: root/links.md
   - Python:
       - Python: Python/index.md
@@ -14,6 +15,7 @@ nav:
           - Декораторы: Python/Decorators.md
           - Itertools: Python/Itertools.md
           - Functools: Python/Functools.md
+          - Логгирование: Python/logging.md
           - Методы классов: Python/Class_methods.md
           - Дандер методы: Python/Dander.md
           - Asyncio: Python/Asyncio.md
@@ -23,6 +25,9 @@ nav:
           - Веб-сокеты: Python/FastAPI/WebSockets.md
           - Pydantic: Python/FastAPI/Pydantic.md
           - SQLAlchemy: Python/FastAPI/SQLAlchemy.md
+      - Тесты:
+          - Pytest: Python/Tests/index.md
+          - Конфигурация: Python/Tests/config.md
       - Пакеты:
           - Создание venv: Python/venv.md
           - uv: Python/uv.md
@@ -56,6 +61,7 @@ repo_url: https://github.com/PurpleSwtr/Utils-Docs
 repo_name: PurpleSwtr/Utils-Docs
 site_author: PurpleSwtr
 copyright: Copyright © 2026 PurpleSwtr
+dev_addr: 127.0.0.1:8008
 
 theme:
   name: material

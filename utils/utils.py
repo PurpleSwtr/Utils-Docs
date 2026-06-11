@@ -1,6 +1,7 @@
-from pathlib import Path
 import re
-from config import config
+from pathlib import Path
+
+from utils.config import config
 
 
 def get_real_docs_files(docs_dir: str) -> set:
@@ -12,6 +13,27 @@ def get_real_docs_files(docs_dir: str) -> set:
         found_files.add(relative_path)
 
     return found_files
+
+
+# Временное решение, нужно потихоньку рефакторить и избавляться от utils-мусорки
+def get_mkdocs_nav_files_raw(mkdocs_yml_path: str) -> dict:
+    nav_files = dict()
+    pattern = re.compile(r":\s*['\"]?([^'\"]+\.md)['\"]?")
+    try:
+        with open(mkdocs_yml_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip() == "" and nav_files:
+                    break
+                match = pattern.search(line)
+                if match:
+                    right_part = line.split("- ", 1)[1]
+
+                    result = right_part.split(":", 1)[0]
+                    nav_files[result] = str(match.group(1))
+    except FileNotFoundError:
+        return dict()
+
+    return nav_files
 
 
 def get_mkdocs_nav_files(mkdocs_yml_path: str) -> set:

@@ -26,5 +26,4 @@ mkdocs_utils.egg-info/
 .DS_Store
 Thumbs.db
 docker-compose*.yml
-TODO.md
 README.md

@@ -5,7 +5,7 @@
       "label": "mkdocs-yml-create",
       "type": "shell",
       "command": "python",
-      "args": ["utils/utils.py"],
+      "args": ["-m", "utils.utils"],
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -44,7 +44,7 @@
     },
     {
       "label": "Run Fullstack",
-      "dependsOn": ["Run Frontend", "Run Backend"],
+      "dependsOn": ["Run Frontend", "Run Backend", "Run & Build MkDocs"],
       "problemMatcher": [],
       "group": {
         "kind": "build",

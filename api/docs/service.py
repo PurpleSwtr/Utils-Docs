@@ -1,5 +1,8 @@
+import logging
+
 from fastapi import HTTPException
 
+from api.core.config import config
 from api.docs.models import DocsNote
 from utils.add_to_docs import (
     add_to_docs,
@@ -7,12 +10,14 @@ from utils.add_to_docs import (
     get_md_text,
     get_sections_names,
 )
+from utils.utils import get_mkdocs_nav_files_raw
 
 
 class DocsService:
     def __init__(
         self,
-    ): ...
+    ):
+        self.logger = logging.getLogger(__name__)
 
     @staticmethod
     def get_categories_names() -> list:
@@ -32,3 +37,10 @@ class DocsService:
             add_to_docs(**docs_note.model_dump())
         except FileNotFoundError as e:
             raise HTTPException(status_code=404, detail=f"Файл {e} не найден")
+
+    def get_paths_mkdocs_yml_nav_files(self):
+
+        nav_files = get_mkdocs_nav_files_raw(str(config.MKDOCS_YML))
+
+        self.logger.debug(nav_files)
+        return nav_files

@@ -8,3 +8,4 @@ vscode_extension/
 mkdocs_utils.egg-info
 build/
 .env
+*.log

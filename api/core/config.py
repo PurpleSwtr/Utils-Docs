@@ -9,7 +9,10 @@ class Config(BaseSettings):
     app_name: str = "Utils-Docs"
 
     DOCS: Path = ROOT / "docs"
+    MKDOCS_YML: Path = ROOT / "mkdocs.yml"
+    TODO_MD: Path = ROOT / "TODO.md"
 
+    DOCS_TODO_PATH: Path = DOCS / "root" / "todo.md"
     ASSETS_PATH: Path = DOCS / "assets"
     IMAGES_PATH: Path = ASSETS_PATH / "images"
     GIFS_PATH: Path = ASSETS_PATH / "gifs"
