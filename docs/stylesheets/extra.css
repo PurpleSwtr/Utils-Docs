@@ -157,12 +157,13 @@ display: none;
 
 .md-typeset pre > code {
   border-radius: 12px;
-  border-left: 6px solid var(--md-accent-fg-color);
+  border-left: 3px solid var(--md-accent-fg-color);
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   font-size: 0.9em;
   line-height: 1.5;
   position: relative;
 }
+
 .md-nav__item--section + .md-nav__item--section {
   border-top: 1px solid var(--md-divider) !important;
   margin-top: 1.2em !important;
