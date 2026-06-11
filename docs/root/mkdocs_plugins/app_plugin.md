@@ -103,7 +103,7 @@ git reset --soft HEAD~1
 
     Это позволяет пробрасывать файлы документации и git с локального компьютера.
 
-    ![Файловая система контейнера backend](./assets/images/docker_docs_mount.png "Файловая система контейнера backend")
+    ![Файловая система контейнера backend](../../assets/images/docker_docs_mount.png "Файловая система контейнера backend")
 
 ### Добавление изображений и GIF-файлов в assets
 

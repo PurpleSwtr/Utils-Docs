@@ -7,6 +7,7 @@ nav:
           - Автогенерация задач с сортировкой на основе TODO.md: root/mkdocs_plugins/autogenerate_todo.md
           - Прогресс добавления функционала: root/todo.md
       - Полезные ссылки: root/links.md
+      - Общие фишки: root/tips.md
   - Python:
       - Python: Python/index.md
       - Возможности языка:
@@ -59,6 +60,7 @@ site_name: Utils Docs
 site_url: https://PurpleSwtr.github.io/Utils-Docs/
 
 repo_url: https://github.com/PurpleSwtr/Utils-Docs
+edit_uri: edit/main/docs/
 repo_name: PurpleSwtr/Utils-Docs
 site_author: PurpleSwtr
 copyright: Copyright © 2026 PurpleSwtr
@@ -96,6 +98,10 @@ theme:
     - content.code.copy
     - content.tooltips
     - navigation.indexes
+    - content.action.edit
+    - content.action.view
+    - content.footnote.tooltips
+    - header.autohide
 
 extra:
   social:
@@ -105,13 +111,29 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/PurpleSwtr
       name: Мой GitHub
+      site_description: "База знаний по Python, Docker, Vue.js и другим технологиям"
+      site_author: "PurpleSwtr"
 
 plugins:
   - search
   - minify:
       minify_html: true
+  - tags
+  - privacy
+  - git-revision-date-localized:
+      enable_creation_date: true
+      timezone: Europe/Moscow
+#   - social:
+#       cards: true
+#       cards_layout_options:
+#         background_color: "#673AB7"
+#         color: "#FFFFFF"
+#   - optimize
+#   - to-pdf:
+#       enabled_if_env: ENABLE_PDF_EXPORT
 
 markdown_extensions:
+  - meta
   - admonition
   - pymdownx.details
   - pymdownx.superfences

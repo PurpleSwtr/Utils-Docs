@@ -54,7 +54,7 @@
     {
       "label": "Run & Build MkDocs",
       "type": "shell",
-      "command": "mkdocs serve",
+      "command": "source .venv/Scripts/activate && mkdocs serve",
       "problemMatcher": [],
       "presentation": {
         "group": "dev-servers",

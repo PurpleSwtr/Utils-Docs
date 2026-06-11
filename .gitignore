@@ -9,3 +9,4 @@ mkdocs_utils.egg-info
 build/
 .env
 *.log
+.cache/

@@ -36,6 +36,10 @@
   border-image: linear-gradient(-135deg, var(--md-primary-fg-color), var(--md-accent-fg-color)) 1;
 }
 
+.md-typeset h2 {
+  color: var(--md-accent-fg-color);
+}
+
 .md-tabs__link {
   position: relative;
   overflow: hidden;
@@ -176,4 +180,8 @@ li + .md-nav__item--section {
 .md-header__button.md-logo img {
     height: 2rem;
     width: auto;
+}
+
+.md-nav__list .md-nav__list {
+    padding-left: 1.25rem !important; 
 }
